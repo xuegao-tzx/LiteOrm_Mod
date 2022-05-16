@@ -1,0 +1,27 @@
+apply plugin: 'com.huawei.ohos.library'
+ohos {
+    compileSdkVersion 6
+    defaultConfig {
+        compatibleSdkVersion 5
+    }
+    buildTypes {
+        release {
+            proguardOpt {
+                proguardEnabled true
+                rulesFiles 'proguard-rules.pro'
+            }
+        }
+        debug {
+            proguardOpt {
+                proguardEnabled true
+                rulesFiles 'proguard-rules.pro'
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13.1'
+}
